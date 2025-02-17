@@ -7,6 +7,7 @@ const GoogleNews = () => {
   const apiUrl = `https://newsapi.org/v2/everything?q=tesla&from=2025-01-17&sortBy=publishedAt&apiKey=${apiKey}`; // Updated API URL
 
   useEffect(() => {
+    console.log('API Key:', apiKey); // Log the API key
     fetch(apiUrl)
       .then(response => {
         console.log('Response:', response); // Log the response
