@@ -10,7 +10,7 @@ import GoogleNews from './GoogleNews'; // Import GoogleNews component
 import ToggleSwitch from './ToggleSwitch'; // Import ToggleSwitch component
 import MachineLearningAlgorithm from './MachineLearningAlgorithm'; // Import MachineLearningAlgorithm component
 
-const MobileMenu = ({ isOpen, onClose, onNavigate }) => {
+const MobileMenu = ({ isOpen, onClose, onNavigate, setIsChatOpen }) => {
   if (!isOpen) return null;
 
   return (
@@ -451,6 +451,7 @@ const App = () => {
             isOpen={isMenuOpen}
             onClose={() => setIsMenuOpen(false)}
             onNavigate={handleNavigate}
+            setIsChatOpen={setIsChatOpen}
           />
 
           {error && (
@@ -539,6 +540,7 @@ MobileMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onNavigate: PropTypes.func.isRequired,
+  setIsChatOpen: PropTypes.func.isRequired,
 };
 
 Post.propTypes = {
